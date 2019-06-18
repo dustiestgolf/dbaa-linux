@@ -1,4 +1,4 @@
-#  wonderville-logo.script - boot splash plugin
+#  wonderville-splash.script - boot splash plugin
 #
 #  Copyright (C) 2009 Canonical Ltd.
 #
@@ -165,13 +165,13 @@ Window.SetBackgroundBottomColor (0.09, 0.32, 0.30);  # an equally nice colour on
 
 bits_per_pixel = Window.GetBitsPerPixel ();
 if (bits_per_pixel == 4) {
-    logo_filename = "wonderville16.png";
+    logo_filename = "wonderville-splash16.png";
     progress_dot_off_filename = "progress-dot-off16.png";
     progress_dot_on_filename = "progress-dot-on16.png";
     password_field_filename = "password-field16.png";
     question_field_filename = "password-field16.png";
 } else {
-    logo_filename = "wonderville.png";
+    logo_filename = "wonderville-splash.png";
     progress_dot_off_filename = "progress-dot-off.png";
     progress_dot_on_filename = "progress-dot-on.png";
     password_field_filename = "password-field.png";

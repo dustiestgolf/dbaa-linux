@@ -10,9 +10,9 @@ fi
  cp -r ./wonderville /usr/share/plymouth/themes
  rm /usr/share/plymouth/themes/wonderville/installWV
  
- update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/wonderville/wonderville.plymouth 100
+ update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/wonderville/wonderville-splash.plymouth 100
  
- update-alternatives --set default.plymouth /usr/share/plymouth/themes/wonderville/wonderville.plymouth
+ update-alternatives --set default.plymouth /usr/share/plymouth/themes/wonderville/wonderville-splash.plymouth
  
  update-initramfs -u 
  
