@@ -1,0 +1,8 @@
+#!/bin/bash
+
+cd /home/player
+
+asdir='./.config/autostart'
+
+cp "./SCO/Slam City.desktop" "$asdir"
+rm "$asdir/VOLLEYGON.desktop"

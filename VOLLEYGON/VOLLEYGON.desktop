@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Exec=/home/player/VOLLEYGON/VOLLEYGON.x86_64
+X-GNOME-Autostart-enabled=true
+NoDisplay=false
+Hidden=false
+Name[en_US]=VOLLEYGON
+Comment[en_US]=must remove startup box
+X-GNOME-Autostart-Delay=10

@@ -1,0 +1,3 @@
+#!/bin/bash 
+
+'./SCO-Linux-x8664/SCO-Linux-x86+64.x86_64' -screen-fullscreen 1 

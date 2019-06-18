@@ -1,0 +1,13 @@
+#!/bin/bash
+
+#xdotool click 1
+
+xdotool key Tab
+xdotool key Tab
+xdotool key Tab
+xdotool key Tab
+xdotool key Tab
+
+xdotool key Return
+
+unclutter -idle 0.01 -root

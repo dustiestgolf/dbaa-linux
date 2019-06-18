@@ -1,0 +1,9 @@
+#!/bin/bash 
+
+cd ~/SCO
+
+nohup ./startSCO &
+
+sleep 5s
+
+./navigateWindow
