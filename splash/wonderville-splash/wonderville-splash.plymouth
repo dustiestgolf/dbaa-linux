@@ -5,4 +5,4 @@ ModuleName=script
 
 [script]
 ImageDir=/usr/share/plymouth/themes/wonderville-splash
-ScriptFile=/usr/share/plymouth/themes/wonderville/wonderville-splash.script
+ScriptFile=/usr/share/plymouth/themes/wonderville-splash/wonderville-splash.script

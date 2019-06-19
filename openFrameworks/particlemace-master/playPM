@@ -1,0 +1,5 @@
+#! /bin/bash 
+
+cd ~/dbaa/particlemacearcade-master/bin
+
+./particlemacearcade-master

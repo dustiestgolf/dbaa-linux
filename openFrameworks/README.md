@@ -60,12 +60,3 @@ cd OF_0.9.8/scripts/linux
 ./buildAllExamples.sh
 ./testAllExamples.sh
 ```
-
-## Particle Mace
-
-Now that the framework--well,--works we can compile Particle Mace. You will have to substitute in your own paths to particle mace. 
-```
-cp -r /path/to/particlemace OF_0.9.8/apps/myApps
-cd OF_0.9.8/apps/myApps/particlemace
-make
-```
