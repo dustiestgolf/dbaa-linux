@@ -1,9 +1,0 @@
-[Desktop Entry]
-Type=Application
-Exec=/home/player/SCO/slamcity
-X-GNOME-Autostart-enabled=true
-NoDisplay=false
-Hidden=false
-Name[en_US]=Slam City 
-Comment[en_US]=must remove startup box
-X-GNOME-Autostart-Delay=10

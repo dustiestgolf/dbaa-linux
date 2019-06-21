@@ -1,0 +1,24 @@
+#!/bin/bash
+
+if [[ $EUID -ne 0 ]]; then
+   echo "This script must be run wuth sudo" 
+   exit 1
+fi
+
+themedir="/usr/share/plymouth/themes"
+splashname="${PWD##*/}"
+
+cd ../
+
+cp -r "./$splashname" "$themedir"
+
+rm "$themedir/$splashname/installsplash"
+
+update-alternatives --install "$themedir/default.plymouth" default.plymouth "$themedir/$splashname/$splashname.plymouth" 100
+
+update-alternatives --set default.plymouth "$themedir/$splashname/$splashname.plymouth"
+
+update-initramfs -u
+update-grub2
+
+echo "You can remove the folder this script is in."
