@@ -1,0 +1,25 @@
+#!/bin/bash
+
+cd "${0%/*}"
+
+# install splashes
+cd ./splash
+./dbaa-splash/installsplash
+./dbaa-vert-splash/installsplash
+./wonderville/installsplash
+
+# 
+cd ../background
+mkdir /home/share
+chown dbaa /home/share
+chgrp player /home/share 
+cp ./* /home/share/
+ln -s /home/share/dbaa.png /home/dbaa/background.png
+ln -s /home/share/dbaa.png /home/player/background.png
+
+
+# setup orientations
+cd ../orientation/
+./setup-orientations
+
+echo "horizontal is installed by default. run the vert script in orientations if you want it vertical "
