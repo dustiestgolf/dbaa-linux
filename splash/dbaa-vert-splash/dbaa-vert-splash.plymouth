@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=dbaa-vert-splash
+Description=A theme that features a blank background with a logo.
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/dbaa-vert-splash
+ScriptFile=/usr/share/plymouth/themes/dbaa-vert-splash/dbaa-vert-splash.script

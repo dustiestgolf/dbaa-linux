@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [[ $EUID -ne 0 ]]; then
+   echo "This script must be run wuth sudo" 
+   exit 1
+fi
+
+update-alternatives --set default.plymouth /usr/share/plymouth/themes/dbaa-splash/dbaa-splash.plymouth
+
+ln -sf /etc/default/grub_horiz /etc/default/grub
+
+update-grub
+

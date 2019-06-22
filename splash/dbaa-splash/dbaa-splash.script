@@ -242,12 +242,12 @@ fun set_progress_indicator () {
 
     # Here we assume that we can store half bullets on each half of the screen
     # together with some spacing
-    local.x = progress_indicator.x;
+    local.y = progress_indicator.y;
 
     for (index = 0; index <= 4; index++) {
         # Set the "off" bullets
         progress_indicator.bullets_off[index].sprite = Sprite (progress_indicator.bullet_off);
-        progress_indicator.bullets_off[index].sprite.SetPosition (local.x, progress_indicator.y, 1000);
+        progress_indicator.bullets_off[index].sprite.SetPosition (progress_indicator.x, local.y,  1000);
         progress_indicator.bullets_off[index].x = local.x;
         progress_indicator.bullets_off[index].y = progress_indicator.y;
         progress_indicator.bullets_off[index].sprite.SetOpacity (1);

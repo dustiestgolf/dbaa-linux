@@ -1,4 +1,4 @@
-#  dbaa-splash.script - boot splash plugin
+#  dbaa-vert-splash.script - boot splash plugin
 #
 #  Copyright (C) 2009 Canonical Ltd.
 #
@@ -170,13 +170,13 @@ Window.SetBackgroundBottomColor (bg_color.red, bg_color.blue, bg_color.green);  
 
 bits_per_pixel = Window.GetBitsPerPixel ();
 if (bits_per_pixel == 4) {
-    logo_filename = "dbaa-splash16.png";
+    logo_filename = "dbaa-vert-splash16.png";
     progress_dot_off_filename = "progress-dot-off16.png";
     progress_dot_on_filename = "progress-dot-on16.png";
     password_field_filename = "password-field16.png";
     question_field_filename = "password-field16.png";
 } else {
-    logo_filename = "dbaa-splash.png";
+    logo_filename = "dbaa-vert-splash.png";
     progress_dot_off_filename = "progress-dot-off.png";
     progress_dot_on_filename = "progress-dot-on.png";
     password_field_filename = "password-field.png";
@@ -188,8 +188,8 @@ logo.sprite = Sprite ();
 logo.sprite.SetImage (logo.image);
 logo.width = logo.image.GetWidth ();
 logo.height = logo.image.GetHeight ();
-logo.x = Window.GetX () + Window.GetWidth () / 2 - logo.width  / 2;
-logo.y = Window.GetY () + Window.GetHeight () / 2 - logo.height;
+logo.x = Window.GetX () + Window.GetWidth () / 2 + logo.width / 2;
+logo.y = Window.GetY () + Window.GetHeight () / 2 - logo.height / 2;
 logo.z = 1000;
 logo.sprite.SetX (logo.x);
 logo.sprite.SetY (logo.y);
@@ -209,11 +209,11 @@ progress_indicator.bullet_off = Image (progress_dot_off_filename);
 progress_indicator.bullet_on = Image (progress_dot_on_filename);
 progress_indicator.bullet_width = progress_indicator.bullet_off.GetWidth ();
 progress_indicator.bullet_height = progress_indicator.bullet_off.GetHeight ();
-progress_indicator.bullet_hspacing = progress_indicator.bullet_width * 1.1;
-progress_indicator.width = progress_indicator.bullet_width * 5;
-progress_indicator.height = progress_indicator.bullet_height;
-progress_indicator.y = logo.y + logo.height + (logo.height / 4);
-progress_indicator.x = Window.GetX () + Window.GetWidth () / 2 - progress_indicator.width / 2; # logo.x + 26;
+progress_indicator.bullet_vspacing = progress_indicator.bullet_width * 1.1;
+progress_indicator.height = progress_indicator.bullet_height * 5;
+progress_indicator.width = progress_indicator.bullet_width;
+progress_indicator.x = logo.x - (logo.height / 4);
+progress_indicator.y = Window.GetY () + Window.GetHeight () / 2 - progress_indicator.height / 2; # logo.x + 26;
 
 # use a fixed string with ascending and descending stems to calibrate the
 # bounding box for the first message, so the messages below don't move up
@@ -242,14 +242,14 @@ fun set_progress_indicator () {
 
     # Here we assume that we can store half bullets on each half of the screen
     # together with some spacing
-    local.x = progress_indicator.x;
+    local.y = progress_indicator.y;
 
     for (index = 0; index <= 4; index++) {
         # Set the "off" bullets
         progress_indicator.bullets_off[index].sprite = Sprite (progress_indicator.bullet_off);
-        progress_indicator.bullets_off[index].sprite.SetPosition (local.x, progress_indicator.y, 1000);
-        progress_indicator.bullets_off[index].x = local.x;
-        progress_indicator.bullets_off[index].y = progress_indicator.y;
+        progress_indicator.bullets_off[index].sprite.SetPosition (progress_indicator.x, local.y, 1000);
+        progress_indicator.bullets_off[index].x = progress_indicator.x;
+        progress_indicator.bullets_off[index].y = local.y;
         progress_indicator.bullets_off[index].sprite.SetOpacity (1);
 
         #local.debug_medium_string = "Progress indicator " + index + ": x = " + progress_indicator.bullets_off[index].x +
@@ -266,7 +266,7 @@ fun set_progress_indicator () {
 
         progress_indicator.bullets_on[index].sprite.SetOpacity (0);
 
-        local.x += progress_indicator.bullet_hspacing;
+        local.y += progress_indicator.bullet_vspacing;
     }
     #local.debug_string = "Progress indicator: x1 = " + progress_indicator.x + ", x2 = " + local.x + ", y = " + progress_indicator.y +
     #                      ", x logo = " + logo.x + ", y logo = " + logo.y + ", indicator width = " + progress_indicator.width;
@@ -275,7 +275,7 @@ fun set_progress_indicator () {
 
 
 # We have 2 bullets, one on top of the other:
-# The white one is on top of the red one and the former should
+# The white one is on top of the green one and the former should
 # slowly fade so as to get a nice transition effect.
 fun switch_on_bullet (bullets_off, bullets_on, bullet_number, opacity) {
     local.x = bullets_on[bullet_number].x;
