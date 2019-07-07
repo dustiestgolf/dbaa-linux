@@ -1,9 +1,10 @@
+# this is only an example
 [Desktop Entry]
 Type=Application
-Exec=/home/player/VOLLEYGON/VOLLEYGON.x86_64
+Exec=/path/to/game
 X-GNOME-Autostart-enabled=true
 NoDisplay=false
 Hidden=false
-Name[en_US]=VOLLEYGON
-Comment[en_US]=must remove startup box
+Name[en_US]=example.desktop
+Comment[en_US]=some description here
 X-GNOME-Autostart-Delay=10

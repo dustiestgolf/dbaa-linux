@@ -2,8 +2,16 @@
 
 cd ~/SCO
 
-nohup ./startSCO &
+nohup './SCO-Linux-x8664/SCO-Linux-x86+64.x86_64' -screen-fullscreen 1 &
 
-sleep 5s
+xdotool key Tab
+xdotool key Tab
+xdotool key Tab
+xdotool key Tab
+xdotool key Tab
 
-./navigateWindow
+xdotool key Return
+
+unclutter -idle 0.01 -root
+
+
