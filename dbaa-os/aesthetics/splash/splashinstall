@@ -1,0 +1,12 @@
+#!/bin/bash
+
+cd "${0%/*}"
+
+# install splashes
+cd ./dbaa-vert-splash/
+./installsplash --install-only
+cd ../wonderville-splash/
+./installsplash --install-only
+cd ../dbaa-horiz-splash/
+./installsplash
+

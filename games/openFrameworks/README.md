@@ -16,16 +16,16 @@ Comment out line 183, or whichever says
 Edit `scripts/apothecary/formulas/poco/poco.sh` editing lines to read
 ```
 VER=1.7.7-release
-GIT-TAG=1.7.7-release
+GIT-TAG=poco-1.7.7-release
 ```
-Finally edit `addons/ofxVectorGraphics/libs/CreEPS.cpp` by moving the lines 
+Finally edit `addons/ofxVectorGraphics/libs/CreEPS.cpp` by moving the following lines **directly** below `#include "CreEPS.hpp` 
 ```
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
 #include <time.h>
 ```
-below the line`#include "CreEPS.hpp` 
+
 
 
 ### dependencies.

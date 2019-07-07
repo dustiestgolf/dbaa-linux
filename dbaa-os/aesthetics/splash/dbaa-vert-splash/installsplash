@@ -16,9 +16,16 @@ rm "$themedir/$splashname/installsplash"
 
 update-alternatives --install "$themedir/default.plymouth" default.plymouth "$themedir/$splashname/$splashname.plymouth" 100
 
-update-alternatives --set default.plymouth "$themedir/$splashname/$splashname.plymouth"
 
-update-initramfs -u
-update-grub2
+if [[ "$1" != "--install-only" ]]; then 
+	
+	update-alternatives --set default.plymouth "$themedir/$splashname/$splashname.plymouth"
 
-echo "You can remove the folder this script is in."
+
+	update-initramfs -u
+	update-grub2
+
+
+	echo "You can remove the folder this script is in."
+
+fi
